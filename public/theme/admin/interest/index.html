@@ -1,0 +1,223 @@
+<style>
+	#about_input{
+		width: 150px;
+	}
+	form{
+		padding:30px;
+	}
+</style>
+<form class="form-horizontal js-ajax-form clearfix form-inline" action='{:url('admin/Interest/index')}' method='post'>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-condensed">
+	    <thead>
+	        <tr>
+	            <th width="100%">借款额度设置</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+			<tr>
+	            <td>
+					<div class="form-group" style="margin: 10px 40px;">
+	            		<label for="about_input">可借金额范围：</label>
+			            <input type="text" name="INTEREST_LOSS" class="form-control " id="about_input" value="{$interest.INTEREST_LOSS|default=''}" placeholder="500.00" >￥ 至
+			            <input type="text" name="INTEREST_HIGH" class="form-control " id="about_input" value="{$interest.INTEREST_HIGH|default=''}" placeholder="5,000.00">￥
+			        </div>
+			         <div class="form-group" style="margin: 10px 50px;">
+	            		<label for="about_input">首次借款最高金额：</label>
+			            <input type="text" name="INTEREST_OEN_HIGH" class="form-control" id="about_input" value="{$interest.INTEREST_OEN_HIGH|default=''}" placeholder="10.00">￥ 
+			        </div>
+			        <div class="form-group" style="margin: 10px 50px;">
+	            		<label for="about_input">第二次借款最高金额：</label>
+			            <input type="text" name="INTEREST_TWO_HIGH" class="form-control" id="about_input" value="{$interest.INTEREST_TWO_HIGH|default=''}" placeholder="10.00">￥ 
+			        </div>
+
+					<div class="form-group" style="margin: 10px 42px;">
+	            		<label for="about_input">第三次借款最高金额：</label>
+			            <input type="text" name="INTEREST_THIRD_HIGH" class="form-control" id="about_input" value="{$interest.INTEREST_THIRD_HIGH|default=''}" placeholder="10.00">￥ 
+			        </div>
+					<div class="form-group" style="margin: 10px 42px;">
+	            		<label for="about_input">第四次借款最高金额：</label>
+			            <input type="text" name="INTEREST_FORTH_HIGH" class="form-control" id="about_input" value="{$interest.INTEREST_FORTH_HIGH|default=''}" placeholder="10.00">￥ 
+			        </div>
+			        <div class="form-group" style="margin: 10px 42px;">
+	            		<label for="about_input">第五次借款最高金额：</label>
+			            <input type="text" name="INTEREST_FIFTH_HIGH" class="form-control" id="about_input" value="{$interest.INTEREST_FIFTH_HIGH|default=''}" placeholder="10.00">￥ 
+			        </div>
+			        <div class="form-group" style="margin: 10px 42px;">
+	            		<label for="about_input">第六次借款最高金额：</label>
+			            <input type="text" name="INTEREST_SIXTH" class="form-control" id="about_input" value="{$interest.INTEREST_SIXTH|default=''}" placeholder="10.00">￥ 
+			        </div>
+			        <div class="form-group" style="margin: 10px 42px;">
+	            		<label for="about_input">第七次借款最高金额：</label>
+			            <input type="text" name="INTEREST_SEVENTH_HIGH" class="form-control" id="about_input" value="{$interest.INTEREST_SEVENTH_HIGH|default=''}" placeholder="10.00">￥ 
+			        </div>
+			        <div class="form-group" style="margin: 10px 42px;">
+	            		<label for="about_input">第八次借款最高金额：</label>
+			            <input type="text" name="INTEREST_EIGHTH_HIGH" class="form-control" id="about_input" value="{$interest.INTEREST_EIGHTH_HIGH|default=''}" placeholder="10.00">￥ 
+			        </div>
+			        <div class="form-group" style="margin: 10px 42px;">
+	            		<label for="about_input">第九次借款最高金额：</label>
+			            <input type="text" name="INTEREST_NINTH" class="form-control" id="about_input" value="{$interest.INTEREST_NINTH|default=''}" placeholder="10.00">￥ 
+			        </div>
+			        <div class="form-group" style="margin: 10px 42px;">
+	            		<label for="about_input">第十次借款最高金额：</label>
+			            <input type="text" name="INTEREST_TENTH_HIGH" class="form-control" id="about_input" value="{$interest.INTEREST_TENTH_HIGH|default=''}" placeholder="10.00">￥ 
+			        </div>
+	            </td>
+	        </tr>
+	    </tbody>
+    </table>
+</div>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-condensed">
+	    <thead>
+	        <tr>
+	            <th width="100%">借款 利息设置</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+			<tr>
+	            <td>
+			        <div class="form-group" style="margin: 10px 50px;">
+	            		<label for="about_input">可借期限范围：</label>
+			            <input type="text" name="INTEREST_MIN_DAY" class="form-control" id="about_input" value="{$interest.INTEREST_MIN_DAY|default=''}" placeholder="1">￥ 至
+			            <input type="text" name="INTEREST_LENGHT_DAY" class="form-control" id="about_input" value="{$interest.INTEREST_LENGHT_DAY|default=''}" placeholder="30">￥
+			        </div>
+			        <div class="form-group" style="margin: 10px 50px;">
+	            		<label for="about_input">借款服务费：</label>
+			            <input type="text" name="INTEREST_BORROW_FEE" class="form-control" id="about_input" value="{$interest.INTEREST_BORROW_FEE|default=''}" placeholder="10.00">￥ 
+			        </div>
+
+					<div class="form-group" style="margin: 10px 42px;">
+	            		<label for="about_input">投资服务费：</label>
+			            <input type="text" name="INTEREST_INVEST_FEE" class="form-control" id="about_input" value="{$interest.INTEREST_INVEST_FEE|default=''}" placeholder="10.00">￥ 
+			        </div>
+
+					<div class="form-group" style="margin: 10px 50px;">
+	            		<label for="about_input">借款利息：本金 * </label>
+			            <input type="text" name="INTEREST_RATE" style="margin: 0 6px;width: 80px;" class="form-control" id="about_input" value="{$interest.INTEREST_RATE|default=''}" placeholder="1"> % * 借款天数
+			        </div>
+	            </td>
+	        </tr>
+	    </tbody>
+    </table>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-condensed">
+	    <thead>
+	        <tr>
+	            <th width="100%">逾期 利息设置</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+			<tr>
+	            <td>
+					<div class="form-group" style="margin: 10px 30px;">
+	            		<label for="about_input">逾期利息：本金 * </label>
+			            <input type="text" name="INTEREST_OVERDUE_RATE" style="margin: 0 6px;width: 80px;" class="form-control" id="about_input" value="{$interest.INTEREST_OVERDUE_RATE|default=''}" placeholder="1"> % * 逾期天数
+			        </div>
+			        <div class="form-group" style="margin: 10px 30px;">
+	            		<label for="about_input">距逾期</label>
+			            <input type="text" name="ADVANCE_INFORM_DAY" style="margin: 0 2px;width: 50px;" class="form-control" id="about_input" value="{$interest.ADVANCE_INFORM_DAY|default=''}" placeholder="1"> <label for="about_input">天短信通知</label>
+			        </div>
+	            </td>
+	        </tr>
+	    </tbody>
+    </table>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-condensed">
+	    <thead>
+	        <tr>
+	            <th width="100%">提现 利息设置</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+			<tr>
+	            <td>
+					<div class="form-group" style="margin: 10px 30px;">
+	            		<label for="about_input">提现每笔：</label>
+			            <input type="text" name="INTEREST_GETMONEY_FEE" class="form-control " id="about_input" value="{$interest.INTEREST_GETMONEY_FEE|default=''}" placeholder="5.00" >￥
+			        </div>
+			        <div class="form-group" style="margin: 10px 50px;">
+	            		<label for="about_input">单笔提现范围：</label>
+			            <input type="text" name="INTEREST_GETMONEY_LOSS" class="form-control" id="about_input" value="{$interest.INTEREST_GETMONEY_LOSS|default=''}" placeholder="10.00">￥ 至
+			            <input type="text" name="INTEREST_GETMONEY_MAX" class="form-control" id="about_input" value="{$interest.INTEREST_GETMONEY_MAX|default=''}" placeholder="10,000.00">￥
+			        </div>
+	            </td>
+	        </tr>
+	    </tbody>
+    </table>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-condensed">
+	    <thead>
+	        <tr>
+	            <th width="100%">邀请人 奖励设置</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+			<tr>
+	            <td>
+					<div class="form-group" style="margin: 10px 30px;">
+	            		<label for="about_input">邀请人第一次奖励：</label>
+			            <input type="text" name="INTEREST_REWARDS" class="form-control " id="about_input" value="{$interest.INTEREST_REWARDS|default=''}" placeholder="10.00" >￥
+			        </div>
+			        <div class="form-group" style="margin: 10px 50px;">
+	            		<label for="about_input">邀请人每笔奖励：</label>
+			            <input type="text" name="INTEREST_INVITE" class="form-control" id="about_input" value="{$interest.INTEREST_INVITE|default=''}" placeholder="10.00">￥ 
+			        </div>
+	            </td>
+	        </tr>
+	    </tbody>
+    </table>
+</div>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-condensed">
+	    <thead>
+	        <tr>
+	            <th width="100%">催收收取奖励设置</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+			<tr>
+	            <td>
+			        <div class="form-group" style="margin: 10px 50px;">
+	            		<label for="about_input">催收默认奖励比例：</label>
+			            <input type="text" name="INTEREST_COLLECTION_REWARD" class="form-control" id="about_input" value="{$interest.INTEREST_COLLECTION_REWARD|default=''}" placeholder="50">% 
+			        </div>
+	            </td>
+	        </tr>
+	    </tbody>
+    </table>
+</div>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-condensed">
+	    <thead>
+	        <tr>
+	            <th width="100%">单日单人投资限额设置</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+			<tr>
+	            <td>
+			        <div class="form-group" style="margin: 10px 50px;">
+	            		<label for="about_input">投资限额：</label>
+			            <input type="text" name="INVEST_QUOTA" class="form-control" id="about_input" value="{$interest.INVEST_QUOTA|default=''}" placeholder="50000">￥ 
+			        </div>
+	            </td>
+	        </tr>
+	    </tbody>
+    </table>
+</div>
+<div class="form-group clearfix about_buttun">
+    <label for="inputPassword3" class="col-sm-2 control-label"></label>
+    <div class="col-sm-9">
+        <button type="submit" class="btn btn-info js-submit-btn mr_3px">确认保存</button>&nbsp;&nbsp;&nbsp;
+        <button type="reset" class="btn btn-info">放弃</button>
+    </div>
+</div>
+</form>

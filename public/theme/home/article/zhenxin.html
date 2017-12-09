@@ -1,0 +1,147 @@
+<div class="weui_cells_title" style="color: #2FB8C2">* 以下评级结果均来自于用户真实数据</div>
+<div class="weui_cells_title" style="margin-top: 20px;color: #2FB8C2">手机卡实名制</div>
+<div class="weui_cells">
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+        {if condition="input('real_name') eq 2"}
+            <p>已实名</p>
+        {else}
+            <p>未实名</p>
+        {/if}
+        </div>
+        <div class="weui_cell_ft">运营商是否实名登记</div>
+    </div>
+</div>
+<div class="weui_cells_title" style="margin-top: 20px;color: #2FB8C2">网贷黑名单</div>
+<div class="weui_cells">
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            {if condition="input('loan_blacklist') eq 0"}
+                <p>否</p>
+            {else}
+                <p>是</p>
+            {/if}
+        </div>
+        <div class="weui_cell_ft">查询是否是黑名单数据</div>
+    </div>
+</div>
+<div class="weui_cells_title" style="margin-top: 20px;color: #2FB8C2">法院黑名单</div>
+<div class="weui_cells">
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            {if condition="input('court_blacklist') eq 0"}
+                <p>否</p>
+            {else}
+                <p>是</p>
+            {/if}
+        </div>
+        <div class="weui_cell_ft">查询是否有法院案件记录</div>
+    </div>
+</div>
+<div class="weui_cells_title" style="margin-top: 20px;color: #2FB8C2">身份证黑名单</div>
+<div class="weui_cells">
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            {if condition="input('id_blacklist') eq 0"}
+                <p>否</p>
+            {else}
+                <p>是</p>
+            {/if}
+        </div>
+        <div class="weui_cell_ft">查询是否是身份证黑名单数据</div>
+    </div>
+</div>
+<div class="weui_cells_title" style="margin-top: 20px;color: #2FB8C2">金融机构通话记录说明(银行、小额贷款等通话记录)</div>
+<div class="weui_cells">
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>评级A</p>
+        </div>
+        <div class="weui_cell_ft">通话次数：{:input('jt_rating_A')}次</div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>评级B</p>
+        </div>
+        <div class="weui_cell_ft">通话次数：{:input('jt_rating_B')}次</div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>评级C</p>
+        </div>
+        <div class="weui_cell_ft">通话次数：{:input('jt_rating_C')}次</div>
+    </div>
+</div>
+<div class="weui_cells_title" style="margin-top: 20px;color: #2FB8C2">通话记录(填写联系人的电话通话次数)</div>
+<div class="weui_cells">
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>评级A</p>
+        </div>
+        <div class="weui_cell_ft">通话次数：{:input('t_rating_A')}次</div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>评级B</p>
+        </div>
+        <div class="weui_cell_ft">通话次数：{:input('t_rating_B')}次</div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>评级C</p>
+        </div>
+        <div class="weui_cell_ft">通话次数：{:input('t_rating_C')}次</div>
+    </div>
+</div>
+<div class="weui_cells_title" style="margin-top: 20px;color: #2FB8C2">上月短信使用情况</div>
+<div class="weui_cells">
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>评级A</p>
+        </div>
+        <div class="weui_cell_ft">短信次数：0-300</div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>评级B</p>
+        </div>
+        <div class="weui_cell_ft">短信次数：300-900</div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>评级C</p>
+        </div>
+        <div class="weui_cell_ft">短信次数：900-2000</div>
+    </div>
+</div>
+<div class="weui_cells_title" style="margin-top: 20px;color: #2FB8C2">上月流量使用情况</div>
+<div class="weui_cells">
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>评级A</p>
+        </div>
+        <div class="weui_cell_ft">流量额度：0-2000M</div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>评级B</p>
+        </div>
+        <div class="weui_cell_ft">流量额度：2000-5000M</div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>评级C</p>
+        </div>
+        <div class="weui_cell_ft">流量额度：5000-10000M</div>
+    </div>
+</div>
+
+<div class="weui_cells_title" style="margin-top: 20px;color: #2FB8C2">芝麻分</div>
+<div class="weui_cells" style="margin-bottom:30px;">
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>分数</p>
+        </div>
+        <div class="weui_cell_ft">查询用户支付宝的芝麻分</div>
+    </div>
+</div>

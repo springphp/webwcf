@@ -1,0 +1,94 @@
+<div class="panel panel-default">
+    <div class="panel-heading hidden-xs">条件搜索</div>
+    <form role="form" action="{:url('user/index')}" class="form-inline panel-body hidden-xs">
+        <div class="form-group">
+            <label for="ex1" class="sr-only">姓名</label>
+            <input type="text" placeholder="姓名" id="ex1" class="form-control" name="realname" value="{:input('realname')}">
+        </div>
+       <div class="form-group">
+            <label for="ex2" class="sr-only">手机号</label>
+            <input type="text" placeholder="手机号" id="ex2" class="form-control" name="mobile" value="{:input('mobile')}">
+        </div>
+        <div class="form-group">
+            <label for="ex3" class="sr-only">身份证</label>
+            <input type="text" placeholder="身份证" id="ex3" class="form-control" name="idcard" value="{:input('idcard')}">
+        </div>
+        <div class="form-group group1">
+           <input type="text" name="statr_time" class="form-control i-datestart" id="date3" placeholder="开始日期" value="{:input('statr_time')}">
+        </div>
+        <div class="form-group gruop2">
+            <input type="text" name="end_time" class="form-control i-dateend" placeholder="结束日期" value="{:input('end_time')}">
+	    </div>
+        <div class="form-group pull-right">
+            <div class="btn-group">
+                <button class="btn btn-primary btn-outline btn-w-m btn-rec">
+                    <i class="fa fa-search"></i><span class="btn-desc">&nbsp;查询</span>
+                </button>
+                <a href="{:url('')}" class="btn btn-default btn-outline btn-rec">
+                    <i class="fa fa-refresh"></i><span class="btn-desc">&nbsp;重置</span>
+                </a>
+            </div>
+        </div>
+    </form>
+    <div class="panel-footer clearfix ">
+       
+        <div class="pull-right">
+            {$members->render()}
+        </div>
+    </div>
+</div>
+<div class="table-responsive">
+        <table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th >姓名</th>
+                <th class="hidden-xs">身份证号</th>
+                <th >户籍</th>
+                <th class="hidden-xs">星座</th>
+                <th class="hidden-xs">性别</th>
+                <th class="hidden-xs">年龄</th>
+                <th class="hidden-xs">手机号</th>
+                <th class="hidden-xs">邮箱</th>
+                <th class="hidden-xs">投资金额汇总/笔数</th>
+                <th class="hidden-xs">收益汇总/笔数</th>
+                <th class="hidden-xs">借款金额汇总/笔数</th>
+                <th class="hidden-xs">逾期本金汇总/笔数</th>
+                <th class="hidden-xs">创建时间</th>
+                <th class="hidden-xs">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {volist name="members" id="vo"}
+                <tr>
+                    <td><a href="{:url('user/detail',array('user_id'=>$vo['user_id']))}" class="js-window-load" title="会员详情--{$vo.realname}">{$vo.realname}</a></td>
+                    <td class="hidden-xs">{$vo.idcard}</td>
+                    <td>{$vo.home}</td>
+                    <td>{$vo.constellation}</td>
+                    <td class="hidden-xs">{$vo.sex}</td>
+                    <td class="hidden-xs">{$vo.birthday|birthday}</td>
+                    <td class="hidden-xs">{$vo.mobile}</td>
+                   	<td>{$vo.email}</td>
+                   	<td>{$vo.invest_data.money}/{$vo.invest_data.count}</td>
+                   	<td>{$vo.earnings_data.money}/{$vo.earnings_data.count}</td>
+                   	<td>{$vo.borrow_data.money}/{$vo.borrow_data.count}</td>
+                   	<td>{$vo.overdue_data.money}/{$vo.overdue_data.count}</td>
+                   	<td>{$vo.create_time}</td>
+                    <td>
+                    {if condition="$vo.is_vip eq 0"}
+                    <a href="{:url('is_vip',['id'=>$vo.user_id,'is_vip'=>1])}" js-color="#eea236" class="btn btn-default btn-outline btn-xs js-del-btn" text="设为vip后，用户单日投资无限额"><i class="fa fa-check fa-fw"></i><span class="hidden-xs">设为vip</span></a>
+                    {elseif condition="$vo.is_vip eq 1"/}
+                    <a href="{:url('is_vip',['id'=>$vo.user_id,'is_vip'=>0])}" js-color="#eea236" class="btn btn-default btn-outline btn-xs js-del-btn" text="取消vip后，用户单日投资有一定限额"><i class="fa fa-times fa-fw"></i><span class="hidden-xs">取消vip</span></a>
+                    {/if}
+                    </td>
+                </tr>
+            {/volist}
+        </tbody>
+    </table>
+        <!-- <div class="cleanfix">
+            <div class="pull-left pagination hidden-xs" >
+            </div>
+            <div class="pull-left">
+            </div>
+        </div> -->
+
+    </div>

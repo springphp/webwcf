@@ -1,0 +1,81 @@
+---------------------------------------------------------------
+[ 2017-10-29T16:55:16+08:00 ] 127.0.0.7 127.0.0.1 GET /
+[ info ] 127.0.0.7/ [运行时间：0.121007s][吞吐率：8.26req/s] [内存消耗：2,403.22kb] [文件加载：58]
+[ info ] [ LANG ] E:\phpStudy\WWW\project\kawadai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.75 Safari/537.36',
+  'connection' => 'close',
+  'host' => '127.0.0.7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:dbname=kwd;host=localhost;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `kd_menu` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT * FROM `kd_menu` WHERE (  `url` = '/admin/index/index.shtml' ) AND `kd_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-10-29T16:55:16+08:00 ] 127.0.0.7 127.0.0.1 GET /admin/publics/login.shtml
+[ info ] 127.0.0.7/admin/publics/login.shtml [运行时间：0.075004s][吞吐率：13.33req/s] [内存消耗：2,440.59kb] [文件加载：60]
+[ info ] [ LANG ] E:\phpStudy\WWW\project\kawadai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'publics',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=8q7rss7lup7t4koh7rpeg65sa2',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.75 Safari/537.36',
+  'connection' => 'close',
+  'host' => '127.0.0.7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Publics->login[ E:\phpStudy\WWW\project\kawadai\application\admin\controller\Publics.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\project\kawadai\public\theme\admin\publics\login.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'js',
+  6 => 'css',
+  7 => 'img',
+  8 => 'title',
+  9 => 'admin_title',
+  10 => 'nowpage',
+  11 => 'upload',
+  12 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=kwd;host=localhost;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `kd_menu` [ RunTime:0.007001s ]
+[ sql ] [ SQL ] SELECT * FROM `kd_menu` WHERE (  `url` = '/admin/publics/login.shtml' ) AND `kd_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000000s ]

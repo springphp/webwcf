@@ -1,0 +1,16 @@
+<div style="display:none;">
+<form action="{$postUrl}" name="form" method="post">
+	<input type="text" name="operationType" value="{$operationType|default=''}"></br></br>
+	<input type="text" name="merchantID" value="{$merchantID|default=''}"></br></br>
+	<input type="text" name="sign" value="{$sign|default=''}"></br></br>
+	<input type="text" name="request" value="{$request|default=''}"></br></br>
+
+	<input type="submit" value="提交">
+</form>
+</div>
+<script>
+	function sub(){
+		document.form.submit();
+	}
+	setTimeout(sub,0);
+</script>

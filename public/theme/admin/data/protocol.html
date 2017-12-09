@@ -1,0 +1,82 @@
+<form class="form-horizontal js-ajax-form clearfix" action='' method='post'>
+    <!-- 自定义大小 -->
+    <div class="about_nav_title">
+    	<h2>借款与还款协议</h2>
+    </div>
+	<!-- 甲方 -->
+    <div class="form-group">
+        <label for="editorid" class="col-sm-2 control-label">编号：</label>
+        <div class="col-sm-9">
+            <input type="text" name="editorid" class="form-control" id="editorid" value="{$protocol.order_no|default=''}" placeholder="编号">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="jia_name" class="col-sm-2 control-label">甲方(出借方)：</label>
+        <div class="col-sm-9">
+            <input type="text" name="jia_name" class="form-control" id="jia_name" value="{$protocol.invest_user_name|default=''}" placeholder="甲方姓名">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="jia_idcard" class="col-sm-2 control-label">身份证号码：</label>
+        <div class="col-sm-9">
+            <input type="text" name="jia_idcard" class="form-control" id="jia_idcard" value="{$protocol.invest_user_idcard|default=''}" placeholder="身份证号码">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="jia_mobile" class="col-sm-2 control-label">甲方手机号：</label>
+        <div class="col-sm-9">
+            <input type="tel" name="jia_mobile" class="form-control" id="jia_mobile" value="{$protocol.invest_user_tel|default=''}" placeholder="甲方手机号">
+        </div>
+    </div>
+    <div style="margin-top:50px;"></div>
+	<!-- 乙方 -->
+    <div class="form-group">
+        <label for="yi_name" class="col-sm-2 control-label">乙方(借入方)：</label>
+        <div class="col-sm-9">
+            <input type="text" name="yi_name" class="form-control" id="yi_name" value="{$protocol.borrow_user_name|default=''}" placeholder="乙方姓名">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="yi_idcard" class="col-sm-2 control-label">身份证号码：</label>
+        <div class="col-sm-9">
+            <input type="text" name="yi_idcard" class="form-control" id="yi_idcard" value="{$protocol.borrow_user_idcard|default=''}" placeholder="身份证号码">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="yi_mobile" class="col-sm-2 control-label">乙方手机号：</label>
+        <div class="col-sm-9">
+            <input type="tel" name="yi_mobile" class="form-control" id="yi_mobile" value="{$protocol.borrow_user_tel|default=''}" placeholder="乙方手机号">
+        </div>
+    </div>
+    <div style="margin-top:50px;"></div>
+    <!-- 丙方 -->
+	<div class="form-group">
+        <label for="server_name" class="col-sm-2 control-label">丙方(服务提供商)：</label>
+        <div class="col-sm-9">
+            <input type="text" name="server_name" class="form-control" id="server_name" value="{$protocol.PROTOCOL_NAME|default=''}" placeholder="丙方">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="server_mobile" class="col-sm-2 control-label">联系方式：</label>
+        <div class="col-sm-9">
+            <input type="tel" name="server_mobile" class="form-control" id="server_mobile" value="{$protocol.PROTOCOL_TEL|default=''}" placeholder="联系方式">
+        </div>
+    </div>
+	
+	<div class="form-group">
+		<label for="content" class="col-sm-2 control-label">协议内容：</label>
+		<div class="col-sm-9">
+			<script id="container" name="content" type="text/plain">
+			    {$protocol.PROTOCOL_CONTENT|default=""}
+			</script>
+		</div>
+	</div>
+
+    <div class="form-group clearfix about_buttun">
+	    <label for="inputPassword3" class="col-sm-2 control-label"></label>
+	    <!-- <div class="col-sm-9">
+	        <button type="button" class="btn btn-info js-return-btn">返回</button>
+	    </div> -->
+	</div>
+</form>

@@ -1,0 +1,57 @@
+<div class="panel panel-default">
+    <div class="panel-footer clearfix ">
+        <div class="pull-left btn-group hidden-xs" >
+            <a href="{:url('banner/add')}" class="btn btn-default js-window-load" js-title="新增银行卡" js-unique="true">
+                <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;添加
+            </a>
+            <a href="{:url('banner/del')}" class="btn btn-default del-all" text="删除后将无法恢复，请谨慎操作">
+                <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;删除
+            </a>
+        </div>
+        <div class="pull-right">
+            {$list->render()}
+        </div>
+    </div>
+</div>
+<div class="table-responsive">
+        <table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th width='1'><input type="checkbox" class="my-all-check" name="input[]"></th>
+                <th width="150">名称</th>
+                <th width="250" class="hidden-xs">图片</th>
+                <th width="50">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {volist name="list" id="vo"}
+                <tr>
+                   <td width='1'><input type="checkbox" value="{$vo.id}" class="i-checks" name="input[]"></td>
+                    <td>{$vo.name}</td>
+                    <td><a href="javascript:" class="open_image" js-image-id="{$vo.id}" js-image-name="{$vo.image}">查看图片</a></td>
+                    <td >
+                        <span class="btn-group">
+                            <!-- <a href="{:url('edit',['id'=>$vo.id,'page'=>$nowpage])}" class="btn btn-default btn-outline btn-xs js-window-load" title="编辑--{$vo.name}"><i class="fa fa-edit fa-fw"></i><span class="hidden-xs">编辑</span></a> -->
+                            <a href="{:url('del',['id'=>$vo.id])}" class="btn  btn-danger btn-outline btn-xs js-del-btn" text="删除后将无法恢复,请谨慎操作！"><i class="fa fa-trash-o fa-fw"></i><span class="hidden-xs">删除</span></a>
+                        </span>
+                    </td>
+                </tr>
+            {/volist}
+        </tbody>
+    </table>
+</div>
+<div style="position: absolute;width: 500px;height: 300px;display: none;margin-left: 200px;margin-top: 100px;" id="image">
+            
+    <img src="" class="img-box">
+</div>
+<script type="text/javascript">
+        var host = window.location.origin ? window.location.origin : window.location.protocol + '//' + window.location.host;
+        console.log(host);
+        $('.open_image').click(function(){
+            var id   = $(this).attr('js-image-id');
+            var img_name = $(this).attr('js-image-name');
+            $('#image').css('display','block');
+            var src = host+'/public/upload/'+img_name;
+            $('.img-box').attr('src',src);
+        })
+    </script>

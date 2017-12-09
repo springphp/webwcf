@@ -1,0 +1,1 @@
+"D:\wwwroot\kwdcdttdcom\nodejs\php\php.exe"  -f  "D:\wwwroot\kwdcdttdcom\auto.php"

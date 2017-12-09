@@ -1,0 +1,86 @@
+<div class="panel panel-default" style="margin-top: 40px;: ">
+	<div class="panel" style="border-bottom: 1px solid #e7eaec">
+		<p style="margin:5px;font-size: 14px;color: #1ab394;font-weight:bold">借款人联系电话</p>
+	</div>
+	<div class="table-responsive">
+		<table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th >姓名</th>
+                
+                <th >电话</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            {if condition="count($user) neq 0"}
+                {if condition="$user.realname != null"}
+                <td>{$user.realname}</td><td>{$user.mobile}</td>
+                {else/}
+                 <td>未实名</td><td>{$user.mobile}</td>
+                 {/if}
+            {else/}
+                <td colspan="2">借款人不详</td>
+            {/if}
+            </tr>
+        </tbody>
+    </table>
+	</div>
+</div>
+<div class="panel panel-default" style="margin-top: 40px;: ">
+    <div class="panel" style="border-bottom: 1px solid #e7eaec">
+        <p style="margin:5px;font-size: 14px;color: #1ab394;font-weight:bold">借款人关联人信息</p>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th >姓名</th>
+                <th >关系</th>
+                <th >电话</th>
+            </tr>
+        </thead>
+        <tbody>
+        {if condition="count($relate) neq 0"}
+        {volist name="$relate" id="vo"}
+            <tr> 
+                <td>{$vo.realname}</td><td>{$vo.relation}</td><td>{$vo.mobile}</td>
+            </tr>
+         {/volist}
+        {else/}
+            <tr>
+             <td colspan="3">无关联信息</td>
+            </tr>
+        {/if}
+        </tbody>
+    </table>
+    </div>
+</div>
+<div class="panel panel-default" style="margin-top: 40px;: ">
+    <div class="panel" style="border-bottom: 1px solid #e7eaec">
+        <p style="margin:5px;font-size: 14px;color: #1ab394;font-weight:bold">借款人常用联系人（靠前者越常用）</p>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th >排序</th>
+                <th >电话</th>
+            </tr>
+        </thead>
+        <tbody>
+            {if condition="count($mobile) neq 0"}
+            {volist name="mobile" id="vo"}
+            <tr> 
+                <td>{$i}</td><td>{$vo}</td>
+            </tr>
+            {/volist}
+            {else/}
+            <tr> 
+                <td colspan="2">未进行手机运营商认证无法获取该项数据</td>
+            </tr>
+            {/if}
+        </tbody>
+    </table>
+    </div>
+</div>

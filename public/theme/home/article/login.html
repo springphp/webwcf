@@ -1,0 +1,14 @@
+<div style="display: none;">
+<form action="{$postUrl}" name="form" method="post">
+	<input type="text" name="userName" value="{$userName|default=''}"></br></br>
+	<input type="text" name="merchantId" value="{$merchantId|default=''}"></br></br>
+
+	<input type="submit" value="充值">
+</form>
+</div>
+<script>
+	function sub(){
+		document.form.submit();
+	}
+	setTimeout(sub,0);
+</script>

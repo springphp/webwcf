@@ -1,0 +1,60 @@
+<div id="ioswrap" style='padding: 2% 0;{if condition="$articles.type eq 3"}width: 100%;{/if}'>
+	<div class="ios-block">
+		{if condition="$articles.type eq 1"}
+			<p>
+				<span style=";font-family:微软雅黑;color:rgb(0,176,240);font-size:19px"><span style="font-family:微软雅黑"><br/></span></span>
+			</p>
+			<p style="line-height: 28px;">
+			    <span style=";font-family:微软雅黑;font-size:14px"><span style="font-family:微软雅黑">编号：<span id="orderid" style="text-decoration:underline"></span></span></span>
+			</p>
+			<p style="line-height: 28px;">
+			    <span style=";font-family:微软雅黑;font-size:14px"><span style="font-family:微软雅黑">甲方（出借方）：</span></span>
+			</p>
+			<p style="line-height: 28px;">
+			    <span style=";font-family:微软雅黑;font-size:14px"><span style="font-family:微软雅黑">身份证号码：</span></span>
+			</p>
+			<p style="line-height: 28px;">
+			    <span style=";font-family:微软雅黑;font-size:14px"><span style="font-family:微软雅黑">甲方手机号：</span></span>
+			</p>
+			<p style="line-height: 28px;">
+			    <span style=";font-family:微软雅黑;font-size:14px">&nbsp;</span>
+			</p>
+			<p style="line-height: 28px;">
+			    <span style=";font-family:微软雅黑;font-size:14px"><span style="font-family:微软雅黑">乙方（借入方）：<span id="username" style="text-decoration:underline"></span></span></span>
+			</p>
+			<p style="line-height: 28px;">
+			    <span style=";font-family:微软雅黑;font-size:14px"><span style="font-family:微软雅黑">身份证号码：<span id="sfz" style="text-decoration:underline"></span></span></span>
+			</p>
+			<p style="line-height: 28px;">
+			    <span style=";font-family:微软雅黑;font-size:14px"><span style="font-family:微软雅黑">乙方手机号：<span id="phone" style="text-decoration:underline"></span></span></span>
+			</p>
+			<p style="line-height: 28px;">
+			    <span style=";font-family:微软雅黑;font-size:14px">&nbsp;</span>
+			</p>
+			
+		{/if}
+		<p>{$articles.config_value|default=''}</p>
+	</div>
+</div>
+
+{if condition="$articles.type eq 3"}
+	<script >
+		var arr=Array.prototype.slice.call(document.getElementsByClassName('page'));
+		for(var i in arr){
+			arr[i].style.width='100%';
+		}
+		// var arrWidth=Array.prototype.slice.call(document.getElementsByClassName('page_width'));
+		// for(var iw in arrWidth){
+		// 	arr[iw].style.width='50%';
+		// }
+	</script>
+	<style>
+		body {
+			background: #fff!important;
+		}
+	</style>
+{/if}
+
+
+
+

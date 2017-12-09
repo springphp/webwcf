@@ -1,0 +1,77 @@
+<style>
+	#about_input{
+		width: 150px;
+	}
+	form{
+		padding:30px;
+	}
+</style>
+<form class="form-horizontal js-ajax-form clearfix form-inline" action='{:url('admin/Interest/index')}' method='post'>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-condensed">
+	    <thead>
+	        <tr>
+	            <th width="100%">通话记录等级设置</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+			<tr>
+	            <td>
+					<div class="form-group" style="margin: 10px 30px;">
+	            		<label for="about_input">A 级范围</label>
+			            <input type="text" name="T_RATING_A_LOSS" class="form-control " id="about_input" value="{$interest.T_RATING_A_LOSS|default=''}" placeholder="500.00" >次 至
+			            <input type="text" name="T_RATING_A_HIGH" class="form-control " id="about_input" value="{$interest.T_RATING_A_HIGH|default=''}" placeholder="5,000.00">次
+			        </div>
+			        <div class="form-group" style="margin: 10px 50px;">
+	            		<label for="about_input">B 级范围</label>
+			            <input type="text" name="T_RATING_B_LOSS" class="form-control" id="about_input" value="{$interest.T_RATING_B_LOSS|default=''}" placeholder="1">次 至
+			            <input type="text" name="T_RATING_B_HIGH" class="form-control" id="about_input" value="{$interest.T_RATING_B_HIGH|default=''}" placeholder="30">次
+			        </div>
+			        <div class="form-group" style="margin: 10px 50px;">
+	            		<label for="about_input">C 级范围</label>
+			            <input type="text" name="T_RATING_C_LOSS" class="form-control" id="about_input" value="{$interest.T_RATING_C_LOSS|default=''}" placeholder="1">次 至
+			            <input type="text" name="T_RATING_C_HIGH" class="form-control" id="about_input" value="{$interest.T_RATING_C_HIGH|default=''}" placeholder="0">次
+			        </div>
+	            </td>
+	        </tr>
+	    </tbody>
+    </table>
+</div>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-condensed">
+	    <thead>
+	        <tr>
+	            <th width="100%">金融机构通话记录等级设置</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+			<tr>
+	            <td>
+					<div class="form-group" style="margin: 10px 30px;">
+	            		<label for="about_input">A 级范围</label>
+			            <input type="text" name="JT_RATING_A_LOSS" class="form-control " id="about_input" value="{$interest.JT_RATING_A_LOSS|default=''}" placeholder="500.00" >次 至
+			            <input type="text" name="JT_RATING_A_HIGH" class="form-control " id="about_input" value="{$interest.JT_RATING_A_HIGH|default=''}" placeholder="5,000.00">次
+			        </div>
+			        <div class="form-group" style="margin: 10px 50px;">
+	            		<label for="about_input">B 级范围</label>
+			            <input type="text" name="JT_RATING_B_LOSS" class="form-control" id="about_input" value="{$interest.JT_RATING_B_LOSS|default=''}" placeholder="1">次 至
+			            <input type="text" name="JT_RATING_B_HIGH" class="form-control" id="about_input" value="{$interest.JT_RATING_B_HIGH|default=''}" placeholder="30">次
+			        </div>
+			        <div class="form-group" style="margin: 10px 50px;">
+	            		<label for="about_input">C 级范围</label>
+			            <input type="text" name="JT_RATING_C_LOSS" class="form-control" id="about_input" value="{$interest.JT_RATING_C_LOSS|default=''}" placeholder="1">次 至
+			            <input type="text" name="JT_RATING_C_HIGH" class="form-control" id="about_input" value="{$interest.JT_RATING_C_HIGH|default=''}" placeholder="0">次
+			        </div>
+	            </td>
+	        </tr>
+	    </tbody>
+    </table>
+</div>
+<div class="form-group clearfix about_buttun">
+    <label for="inputPassword3" class="col-sm-2 control-label"></label>
+    <div class="col-sm-9">
+        <button type="submit" class="btn btn-info js-submit-btn mr_3px">确认保存</button>&nbsp;&nbsp;&nbsp;
+        <button type="reset" class="btn btn-info">放弃</button>
+    </div>
+</div>
+</form>

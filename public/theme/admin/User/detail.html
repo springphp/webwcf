@@ -1,0 +1,263 @@
+<div class="panel panel-default">
+	<div class="panel" style="border-bottom: 1px solid #e7eaec">
+		<p style="margin:5px;font-size: 14px;color: #1ab394;font-weight:bold">会员信息</p>
+	</div>
+	<form role="form" action="{:url('user/index')}" class="form-inline panel-body">
+        <div class="form-group">
+           <p class="form-control" >姓名:{$info.realname}</p>
+        </div>
+       
+        <div class="form-group">
+             <p class="form-control" >手机号：{$info.mobile}</p>
+        </div>
+         <div class="form-group">
+             <p class="form-control" >邮箱：{$info.email}</p>
+        </div>
+         <div class="form-group">
+             <p class="form-control" >年龄：{$info.birthday|birthday}</p>
+        </div>
+         <div class="form-group">
+             <p class="form-control" >性别：{if condition="$info.sex eq 1"}男{elseif condition="$info.sex eq 2"}女{else/}不详{/if}</p>
+        </div>
+         <div class="form-group">
+             <p class="form-control" >户籍：{$info.province_id}</p>
+        </div>
+         <div class="form-group">
+             <p class="form-control" >星座：{$info.constellation}</p>
+        </div>
+        <div class="form-group">
+             <p class="form-control" >角色：{$info.role|get_user_role}</p>
+        </div>
+        <div class="form-group">
+            <p class="form-control" style="width: 300px;">身份证：{$info.idcard}</p>
+        </div>
+    </form>
+</div>
+<div class="panel panel-default" style="margin-top: 40px;: ">
+	<div class="panel" style="border-bottom: 1px solid #e7eaec">
+		<p style="margin:5px;font-size: 14px;color: #1ab394;font-weight:bold">身份证信息</p>
+	</div>
+	<div class="table-responsive">
+		<table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th >身份证人像面</th>
+                <th >身份证国徽面</th>
+                <th >身份证手持照</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>   
+                {if condition="$info.idcard_z neq ''"}
+                <img src="{$public_path}upload/{$info.idcard_z}" width="260" height="160">
+                {else/}
+                <img src="{$static_path}img/default1.png" width="260" height="160"/>
+                {/if}
+            </td>
+            <td>
+                {if condition="$info.idcard_f neq ''"}
+                <img src="{$public_path}upload/{$info.idcard_f}" width="260" height="160">
+                {else/}
+                <img src="{$static_path}img/default1.png" width="260" height="160"/>
+                {/if}
+            </td>
+            <td>
+                {if condition="$info.idcard_s neq ''"}
+                <img src="{$public_path}upload/{$info.idcard_s}" width="260" height="160">
+                {else/}
+                <img src="{$static_path}img/default1.png" width="260" height="160"/>
+                {/if}
+            </td>
+            </tr>
+        </tbody>
+    </table>
+	</div>
+</div>
+<div class="panel panel-default" style="margin-top: 40px;: ">
+	<div class="panel" style="border-bottom: 1px solid #e7eaec">
+	 	<p style="margin:5px;font-size: 14px;color: #1ab394;font-weight:bold">人际信息</p>
+	</div>
+	<div class="table-responsive">
+		<table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th >姓名</th>
+                <th >关系</th>
+                <th >联系电话</th>
+                <th >电子邮件</th>
+                <th >详细地址</th>
+            </tr>
+        </thead>
+        <tbody>
+            {volist name="$info.related" id="vo"}
+            <tr>
+            <td>{$vo.realname}</td><td>{$vo.relation}</td><td>{$vo.mobile}</td><td>{$vo.email}</td><td>{$vo.address}</td>
+            </tr>
+            {/volist}
+        </tbody>
+    </table>
+	</div>
+</div>
+<div class="panel panel-default" style="margin-top: 40px;: ">
+	<div class="panel" style="border-bottom: 1px solid #e7eaec">
+		<p style="margin:5px;font-size: 14px;color: #1ab394;font-weight:bold">银行卡信息</p>
+	</div>
+	<div class="table-responsive">
+		<table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th >账户</th>
+                <th >帐号</th>
+                <th >所属银行</th>
+            </tr>
+        </thead>
+        <tbody>
+            {volist name="$info.bankcard" id="v1"}
+            <tr>
+            <td>{$info.realname}</td><td>{$v1.bankcard_num}</td><td>{$v1.bank_code}</td>
+            </tr>
+            {/volist}
+        </tbody>
+    </table>
+	</div>
+</div>
+<div class="panel panel-default" style="margin-top: 40px;: ">
+	<div class="panel" style="border-bottom: 1px solid #e7eaec">
+	   <p style="margin:5px;font-size: 14px;color: #1ab394;font-weight:bold">征信详情</p>
+	</div>
+	<div class="table-responsive">
+		<table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th >项目</th>
+                <th >状态</th>
+                <th >信用积分</th>
+                <th >信用等级</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>手机运营商</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+            <td>芝麻信用授信</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+            <td>淘宝授信</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+            <td>京东授信</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+            <td>邮箱授信</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+            <td>网贷黑名单</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+            <td>信用卡授信</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+            <td>法院黑名单</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+            <td>身份证黑名单</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+            <td>金融机构通话说明</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+            <td>通话记录</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+            <td>信用卡滞纳金</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+            <td>历史逾期最高天数</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+            <td>逾期次数</td><td></td><td></td><td></td>
+            </tr>
+        </tbody>
+    </table>
+	</div>
+</div>
+<div class="panel panel-default" style="margin-top: 40px;: ">
+	<div class="panel" style="border-bottom: 1px solid #e7eaec">
+	   <p style="margin:5px;font-size: 14px;color: #1ab394;font-weight:bold">个人财富</p>
+	</div>
+	<div class="table-responsive">
+		<table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th >状态</th>
+                <th >收益总金额</th>
+                <th >笔数</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>邀请认证奖励</td><td>{$info.rewards_r}</td><td>{$info.rewards_r_count}</td>
+            </tr>
+            <tr>
+            <td>邀请投资奖励</td><td>{$info.rewards_t}</td><td>{$info.rewards_t_count}</td>
+            </tr>
+            <tr>
+            <td>投资收益</td><td>{$info.invest_income}</td><td>{$info.invest_income_count}</td>
+            </tr>
+            <tr>
+            <td>已结算罚息</td><td>{$info.overdue_m}</td><td>{$info.overdue_m_count}</td>
+            </tr>
+            <tr>
+            <th>汇总</th><th>{$info.total_income}</th><th>{$info.total_count}</th>
+            </tr>
+        </tbody>
+    </table>
+	</div>
+</div>
+<div class="panel panel-default" style="margin-top: 40px;: ">
+    <div class="panel" style="border-bottom: 1px solid #e7eaec">
+        <p style="margin:5px;font-size: 14px;color: #1ab394;font-weight:bold">投资记录汇总</p>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th >投资金额</th>
+                <th >笔数</th>
+                <th >收益</th>
+                <th >结算罚息</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>{$info.total_invest}</td><td>{$info.count_invest}</td><td>{$info.interest_invest}</td><td>{$info.overdue_invest}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+<div class="panel panel-default" style="margin-top: 40px;: ">
+    <div class="panel" style="border-bottom: 1px solid #e7eaec">
+        <p style="margin:5px;font-size: 14px;color: #1ab394;font-weight:bold">借款记录汇总</p>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th >借款金额</th>
+                <th >笔数</th>
+                <th >收益</th>
+                <th >结算罚息</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>{$info.total_borrow}</td><td>{$info.count_borrow}</td><td>{$info.interest_borrow}</td><td>{$info.overdue_borrow}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+

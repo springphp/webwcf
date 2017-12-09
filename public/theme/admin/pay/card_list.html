@@ -1,0 +1,27 @@
+<style>
+	form{
+		padding:30px 600px 30px 30px;
+	}
+</style>
+<form class="form-horizontal js-ajax-form clearfix" action='{:url('admin/Pay/card_list')}' method='post'>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-condensed">
+	    <thead>
+	        <tr>
+	            <th>银行名称</th>
+	            <th>银行英文缩写</th>
+	            <th>图标</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	    	{volist name="cards" id="vo"}
+			<tr>
+	            <td>{$vo.card_name}</td>
+	            <td>{$vo.card_vcode}</td>
+	            <td><img width="50" src="{$public_path}/upload/{$vo.card_log}" alt="暂无图片" /></td>
+	        </tr>
+	        {/volist}
+	    </tbody>
+    </table>
+</div>
+</form>

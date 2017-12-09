@@ -1,0 +1,61 @@
+<div class="panel panel-default" style="margin-top: 40px;border: 0px; ">
+	<div class="table-responsive" >
+		<table class="table " style="border: 0">
+            <tbody>
+                <tr >
+                    <td align="center" style="border: 0px">
+                        <a href="{:url('user/apply_list')}">
+                        <div style="width: 220px;height: 160px;background-color: #33ccff;margin-top: 30px;margin-bottom:30px;border-radius: 10px;">
+                            <p style="height: 40%;padding-top:10%;border-bottom: 1px solid #999999;color: #ffffff;font-size: 18px">实名认证待审核数量</p>
+                            <p style="height: 60%;padding-bottom:25%;color: #ffffff;font-size: 26px;font-weight:bold">{$nend_check_count}</p>
+                        </div>
+                        </a>
+                    </td>
+                    <td align="center" style="border: 0px">
+                        <a href="{:url('user/index')}">
+                        <div style="width: 220px;height: 160px;background-color: #ffcc66;border-radius: 10px;" >
+                            <p style="height: 40%;padding-top:10%;border-bottom: 1px solid #999999;color: #ffffff;font-size: 18px">会员总数</p>
+                            <p style="height: 60%;padding-bottom:25%;color: #ffffff;font-size: 26px;font-weight:bold">{$user_count}</p>
+                        </div>
+                        </a>
+                    </td>
+                    <td align="center" style="border: 0px">
+                        <a href="{:url('data/collection')}">
+                        <div style="width: 220px;height: 160px;background-color: #ff66cc;border-radius: 10px;" >
+                            <p style="height: 40%;padding-top:10%;border-bottom: 1px solid #999999;color: #ffffff;font-size: 18px">待催收总数</p>
+                            <p style="height: 60%;padding-bottom:25%;color: #ffffff;font-size: 26px;font-weight:bold">{$collection_count}</p>
+                        </div>
+                        </a>
+                    </td>
+                    <td align="center" style="border: 0px">
+                        <a href="{:url('data/invest_list')}">
+                        <div style="width: 220px;height: 160px;background-color: #009900;border-radius: 10px;" >
+                            <p style="height: 40%;padding-top:10%;border-bottom: 1px solid #999999;color: #ffffff;font-size: 18px">本月投资汇总/笔数</p>
+                            <p style="height: 60%;padding-bottom:25%;color: #ffffff;font-size: 26px;font-weight:bold">{$total_invest}/{$invest_count}</p>
+                        </div>
+                        </a>
+                    </td>
+                    <td align="center" style="border: 0px">
+                        <a href="{:url('data/borrow_list')}">
+                        <div style="width: 220px;height: 160px;background-color: #cc3333;border-radius: 10px;" >
+                            <p style="height: 40%;padding-top:10%;border-bottom: 1px solid #999999;color: #ffffff;font-size: 18px">本月借款汇总/笔数</p>
+                            <p style="height: 60%;padding-bottom:25%;color: #ffffff;font-size: 26px;font-weight:bold">{$total_borrow}/{$borrow_count}</p>
+                        </div>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+	</div>
+</div>
+<div class="panel panel-default" style="margin-top: 40px;padding-bottom:40px ">
+    <div class="panel" style="border-bottom: 1px solid #e7eaec;border-top: 1px solid #e7eaec">
+        <p style="margin:10px;font-size: 14px;color: #1ab394;font-weight:bold">近一个月收益统计</p>
+
+    </div>
+    <div class="table-responsive" >
+        <p class="pull-right" style="margin:10px;padding:10px;font-weight:bold;font-size: 14px;">日期：{:$date}</p>
+        <div style="height: 350px;margin-left:50px;margin-right:50px;margin-top:40px;margin-bottom: 30px;text-align: center;"><img src="__ROOT__/graph.png">
+        </div>
+    </div>
+</div>
